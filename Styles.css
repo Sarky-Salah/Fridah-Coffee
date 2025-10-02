@@ -40,6 +40,7 @@ body.nav-open{overflow:hidden}
 }
 
 .nav-links {
+  background: #2c2c2c;
   display: flex;
   list-style: none;
   gap: 20px;
@@ -47,13 +48,14 @@ body.nav-open{overflow:hidden}
 
 .nav-links li a {
   text-decoration: none;
-  color: #fff;
+  color: white;
+  background: #2c2c2c;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #c49a6c;
+  color: #6f4e37;
 }
 
 /* Hamburger menu default (hidden on desktop) */
@@ -62,6 +64,10 @@ body.nav-open{overflow:hidden}
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+}
+
+.hamburger:hover span {
+  background: #6f4e37; /* Coffee brown */
 }
 
 .hamburger span {
@@ -88,6 +94,7 @@ body.nav-open{overflow:hidden}
 
   .nav-links.active {
     display: flex; /* show when toggled */
+  background: #2c2c2c;
   }
 
   .hamburger {
@@ -115,7 +122,7 @@ body.nav-open{overflow:hidden}
   z-index:0;
 }
 .hero-content{position:relative; z-index:1; max-width:720px; margin:0 auto}
-.hero-title{font-family:'Playfair Display',serif; font-size:2.4rem; margin-bottom:12px}
+.hero-title{font-family:' ',serif; font-size:2.4rem; margin-bottom:12px}
 .hero-story{font-size:1.1rem; margin-bottom:20px; line-height:1.5}
 
 /* Buttons */
@@ -136,7 +143,7 @@ body.nav-open{overflow:hidden}
 .services{display:flex; flex-wrap:wrap; gap:24px; justify-content:center; margin:48px auto; max-width:1000px}
 .service-card{background:#fff; border-radius:12px; padding:22px; min-width:220px; max-width:260px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06)}
 .service-card .icon{font-size:2rem; margin-bottom:10px; color:var(--accent)}
-.service-card h3{font-family:'Playfair Display',serif; margin:6px 0}
+.service-card h3{font-family:' ',serif; margin:6px 0}
 
 /* PRODUCTS GRID */
 .products-section{padding:28px 20px; max-width:1100px; margin:0 auto}
