@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
   <!-- NAVBAR (sticky) -->
@@ -33,7 +33,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero">
     <div class="hero-content">
       <h1 id="hero-title" class="hero-title">From Farm to Cup – Discover the Art of Coffee with Fridah Coffee</h1>
       <p class="hero-story">
@@ -184,45 +184,6 @@
     &copy; <span id="year"></span> Fridah Coffee. All rights reserved.
     <p style="margin-top:6px;font-size:0.9rem;color:#f5e9dd">Developed by The-One Developers.</p>
   </footer>
-
-  <script>
-    // set footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
-    function toggleMenu() {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      navLinks.classList.toggle('active');
-      document.body.classList.toggle('nav-open');
-    }
-
-    function toggleMenu() {
-        document.querySelector('.nav-links').classList.toggle('active');
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-
-    // close menu when a nav link is clicked (mobile)
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) toggleMenu();
-      });
-    });
-
-    // close on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navLinks.classList.contains('active')) toggleMenu();
-    });
-
-    // close when tapping outside the nav on mobile
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
-        toggleMenu();
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
