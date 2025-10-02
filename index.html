@@ -1,180 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Fridah Coffee – From Farm to Cup</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fridah Coffee – From Farm to Cup</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="Styles.css">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:title" content="Fridah Coffee – From Farm to Cup" />
+  <meta property="og:description" content="Discover premium coffee, barista training, and consulting services with Fridah Coffee." />
+  <meta property="og:image" content="https://www.cultursmag.com/wp-content/uploads/2022/03/coffee-g6e4116bc9_1920-1.jpg" />
+  <meta property="og:url" content="https://fridah-coffee.netlify.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fridah Coffee – From Farm to Cup" />
+  <meta name="twitter:description" content="Discover premium coffee, barista training, and consulting services with Fridah Coffee." />
+  <meta name="twitter:image" content="https://www.cultursmag.com/wp-content/uploads/2022/03/coffee-g6e4116bc9_1920-1.jpg" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">Fridah Coffee</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="training.html">Training</a></li>
-                <li><a href="consulting.html">Consulting</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- NAVBAR (sticky) -->
+  <header class="site-header">
+    <nav class="navbar" role="navigation" aria-label="Main">
+      <a href="index.html" class="logo">Fridah Coffee</a>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">From Farm to Cup – Discover the Art of Coffee with Fridah Coffee</h1>
-            <p class="hero-story">
-                I am Fridah, and coffee is more than a drink — it’s my journey. From the fertile soils of Uganda’s Mount Elgon to your cup, I have dedicated my life to sharing the rich flavors and stories behind every bean.
-            </p>
-            <div class="hero-buttons">
-                <a href="#shop">Shop Now</a>
-                <a href="#brew">Learn to Brew</a>
-            </div>
-        </div>
-    </header>
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="active">Home</a></li>
+        <li role="none"><a role="menuitem" href="about.html">About</a></li>
+        <li role="none"><a role="menuitem" href="products.html">Products</a></li>
+        <li role="none"><a role="menuitem" href="training.html">Training</a></li>
+        <li role="none"><a role="menuitem" href="consulting.html">Consulting</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+      </ul>
 
-    <section class="services">
-        <div class="service-card">
-            <div class="icon">☕</div>
-            <h3>Coffee Products</h3>
-            <p>Freshly roasted beans, ground coffee, and more.</p>
-        </div>
-        <div class="service-card">
-            <div class="icon">🎓</div>
-            <h3>Coffee Training</h3>
-            <p>Workshops and barista training for all levels.</p>
-        </div>
-        <div class="service-card">
-            <div class="icon">🏪</div>
-            <h3>Coffee Shop Setup</h3>
-            <p>Consulting for new and growing coffee shops.</p>
-        </div>
-        <div class="service-card">
-            <div class="icon">🚚</div>
-            <h3>Monthly Subscription</h3>
-            <p>Get fresh coffee delivered monthly to your doorstep.</p>
-        </div>
-    </section>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
-    <section id="shop">
-        <h2 style="font-family:'Playfair Display',serif;">Our Products</h2>
-        <div class="services">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Coffee Beans" style="width:100%;border-radius:10px;">
-                <h3>Arabica Beans</h3>
-                <p>Rich, smooth, and handpicked from Mount Elgon.</p>
-                <a href="#" class="hero-buttons" style="margin-top:10px;">Add to Cart</a>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Brewed Coffee" style="width:100%;border-radius:10px;">
-                <h3>Brewed Coffee</h3>
-                <p>Ready-to-drink, fresh, and aromatic.</p>
-                <a href="#" class="hero-buttons" style="margin-top:10px;">Add to Cart</a>
-            </div>
-        </div>
-        <div style="text-align:center;margin-top:20px;">
-            <a href="#" class="hero-buttons">Subscribe Monthly</a>
-        </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="hero-title" class="hero-title">From Farm to Cup – Discover the Art of Coffee with Fridah Coffee</h1>
+      <p class="hero-story">
+        I am Fridah, and coffee is more than a drink — it’s my journey. From the fertile soils of Uganda’s Mount Elgon to your cup, I have dedicated my life to sharing the rich flavors and stories behind every bean.
+      </p>
+      <div class="hero-buttons">
+        <a href="#shop" class="btn">Shop Now</a>
+        <a href="#training" class="btn btn-ghost">Learn to Brew</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="training">
-        <div class="split">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Barista Training">
-            <div class="split-content">
-                <h2 style="font-family:'Playfair Display',serif;">Training & Workshops</h2>
-                <p>Learn the art of coffee from farm to cup. Packages include travel costs & coffee samples.</p>
-                <div class="pricing">
-                    <div class="package">
-                        <strong>Half-day</strong><br>UGX 100,000
-                    </div>
-                    <div class="package">
-                        <strong>Full-day</strong><br>UGX 180,000
-                    </div>
-                    <div class="package">
-                        <strong>Commercial</strong><br>Contact Us
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="service-card">
+      <div class="icon">☕</div>
+      <h3>Coffee Products</h3>
+      <p>Freshly roasted beans, ground coffee, and more.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🎓</div>
+      <h3>Coffee Training</h3>
+      <p>Workshops and barista training for all levels.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🏪</div>
+      <h3>Coffee Shop Setup</h3>
+      <p>Consulting for new and growing coffee shops.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🚚</div>
+      <h3>Monthly Subscription</h3>
+      <p>Get fresh coffee delivered monthly to your doorstep.</p>
+    </div>
+  </section>  
 
-    <section id="consulting">
-        <h2 style="font-family:'Playfair Display',serif;">Coffee Shop Setup</h2>
-        <div class="split">
-            <div class="split-content">
-                <p>Get expert advice and support for your coffee shop journey. From equipment to menu design, we help you succeed.</p>
-                <button type="submit"><a href="#contact" class="hero-buttons">Free Consultation</a></button>
-                <div class="testimonials">
-                    <div class="testimonial">"Fridah helped us launch our dream café. Her expertise is unmatched!"</div>
-                    <div class="testimonial">"The setup process was smooth and stress-free."</div>
-                </div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Coffee Shop">
-        </div>
-    </section>
+  <!-- CONSULTING -->
+  <section id="consulting" class="split-section">
+    <div class="split">
 
-    <section id="about">
-        <h2 style="font-family:'Playfair Display',serif;">About Us</h2>
-        <div class="split">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Fridah Portrait">
-            <div class="split-content">
-                <p>
-                    Fridah’s journey began on the slopes of Mount Elgon, where coffee is a way of life. Her mission is to share Uganda’s rich coffee heritage with the world, one cup at a time.
-                </p>
-                <div class="about-columns">
-                    <div>
-                        <strong>Mission</strong>
-                        <p>To connect people through the love of coffee and empower local farmers.</p>
-                    </div>
-                    <div>
-                        <strong>Vision</strong>
-                        <p>To be Uganda’s leading ambassador for specialty coffee.</p>
-                    </div>
-                    <div>
-                        <strong>Values</strong>
-                        <p>Quality, Community, Sustainability, Passion.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Coffee Shop">
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2 style="font-family:'Playfair Display',serif;">Contact Us</h2>
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" rows="4" placeholder="Message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-        <a class="whatsapp-link" href="https://wa.me/256773562646" target="_blank">Chat on WhatsApp</a>
-        <div style="margin:20px 0;">
-            <iframe src="https://www.google.com/maps?q=Jinja,+Uganda&output=embed" width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <section class="newsletter">
-        <h3>Join our Coffee Lovers’ Club</h3>
-        <p>Get tips, recipes, and offers.</p>
-        <form>
-            <input type="email" placeholder="Your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </section>
-
-    <section class="social-proof">
-        <h3>Follow us on Instagram</h3>
-        <!-- Replace with your Instagram widget or embed -->
-        <iframe src="https://snapwidget.com/embed/1045727" allowtransparency="true"></iframe>
-    </section>
-
-    <footer>
-        &copy; 2025 Fridah Coffee. All rights reserved. <p>Developed by The-One Developers.</p> 
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    &copy; <span id="year"></span> Fridah Coffee. All rights reserved.
+    <p style="margin-top:6px;font-size:0.9rem;color:#f5e9dd">Developed by The-One Developers.</p>
+    <a href="https://your-portfolio-link.com" target="_blank" style="color:#f5e9dd;text-decoration:none;">https://theonedevs.netlify.app/</a>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

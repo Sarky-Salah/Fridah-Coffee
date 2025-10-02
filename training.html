@@ -7,47 +7,66 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
+  <!-- NAVBAR (sticky) -->
+  <header class="site-header">
+    <nav class="navbar" role="navigation" aria-label="Main">
       <a href="index.html" class="logo">Fridah Coffee</a>
-      <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="training.html">Training</a></li>
-                <li><a href="consulting.html">Consulting</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
+
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="active">Home</a></li>
+        <li role="none"><a role="menuitem" href="about.html">About</a></li>
+        <li role="none"><a role="menuitem" href="products.html">Products</a></li>
+        <li role="none"><a role="menuitem" href="training.html">Training</a></li>
+        <li role="none"><a role="menuitem" href="consulting.html">Consulting</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Coffee Training</h1>
-    <p>Learn the art of coffee – from bean to brew.</p>
+    <div class="hero-content">
+      <h1>Coffee Training</h1>
+      <p>Learn the art of coffee – from bean to brew.</p>
+    </div>
   </section>
 
-  <section class="content">
-    <h2>Workshops & Lessons</h2>
-    <ul class="pricing">
+  
+  <!-- TRAINING -->
+  <section id="training" class="split-section">
+    <div class="split">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Barista Training">
+      <div class="split-content">
+        <h2>Training & Workshops</h2>
+        <p>Learn the art of coffee from farm to cup. Packages include travel costs & coffee samples.</p>
+        <ul class="pricing">
       <li>
         <h3>Barista Workshop</h3>
-        <p>1 Day | UGX 100,000</p>
+        <p>1 Month | UGX 100,000</p>
       </li>
       <li>
         <h3>Brewing Sessions</h3>
-        <p>Half Day | UGX 50,000</p>
+        <p>1 week | UGX 50,000</p>
       </li>
       <li>
         <h3>Coffee Farming Basics</h3>
-        <p>2 Days | UGX 200,000</p>
+        <p>6 Month | UGX 200,000</p>
       </li>
     </ul>
-    <button>Book a Workshop</button>
+      </div>
+    </div>
   </section>
 
+
+<!-- FOOTER -->
   <footer>
-    <p>© 2025 Fridah Coffee. All rights reserved.</p>
+    &copy; <span id="year"></span> Fridah Coffee. All rights reserved.
+    <p style="margin-top:6px;font-size:0.9rem;color:#f5e9dd">Developed by The-One Developers.</p>
+    <a href="https://your-portfolio-link.com" target="_blank" style="color:#f5e9dd;text-decoration:none;">https://theonedevs.netlify.app/</a>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
