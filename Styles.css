@@ -277,3 +277,96 @@
             .split { flex-direction: column; }
             .about-columns { flex-direction: column; }
         }
+
+                /* ---
+        Small Devices (max 480px) → small phones
+        --- */
+        @media (max-width: 480px) {
+        .hero {
+            padding: 4rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 2rem 1rem;
+        }
+
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+
+        footer {
+            font-size: 0.9rem;
+        }
+        }
+
+        /* --------------------
+        Medium Devices (481px – 768px) → larger phones & tablets
+        --------------------- */
+        @media (min-width: 481px) and (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+
+        /* --------------------
+        Large Devices (769px – 1024px) → tablets in landscape & small laptops
+        --------------------- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .products-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        }
+
+        /* --------------------
+        Extra Large Devices (1025px – 1440px) → desktops
+        --------------------- */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        section {
+            max-width: 1200px;
+        }
+        }
+
+        /* --------------------
+        Ultra-Wide Screens (1441px and above)
+        --------------------- */
+        @media (min-width: 1441px) {
+        body {
+            font-size: 1.1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        section {
+            max-width: 1400px;
+        }
+        }
