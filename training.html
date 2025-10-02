@@ -7,24 +7,31 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
+  <!-- NAVBAR (sticky) -->
+  <header class="site-header">
+    <nav class="navbar" role="navigation" aria-label="Main">
       <a href="index.html" class="logo">Fridah Coffee</a>
-      <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="training.html">Training</a></li>
-                <li><a href="consulting.html">Consulting</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
+
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="active">Home</a></li>
+        <li role="none"><a role="menuitem" href="about.html">About</a></li>
+        <li role="none"><a role="menuitem" href="products.html">Products</a></li>
+        <li role="none"><a role="menuitem" href="training.html">Training</a></li>
+        <li role="none"><a role="menuitem" href="consulting.html">Consulting</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Coffee Training</h1>
-    <p>Learn the art of coffee – from bean to brew.</p>
+    <div class="hero-content">
+      <h1>Coffee Training</h1>
+      <p>Learn the art of coffee – from bean to brew.</p>
+    </div>
   </section>
 
   <section class="content">
@@ -49,5 +56,6 @@
   <footer>
     <p>© 2025 Fridah Coffee. All rights reserved.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
