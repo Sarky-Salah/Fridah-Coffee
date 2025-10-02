@@ -126,6 +126,24 @@ body.nav-open{overflow:hidden}
 .hero-story{font-size:1.1rem; margin-bottom:20px; line-height:1.5}
 
 /* Buttons */
+
+.button {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1ebe57; /* darker green on hover */
+}
+
+
 .btn{
   display:inline-block;
   background:var(--accent);
