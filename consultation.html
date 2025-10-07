@@ -44,24 +44,18 @@
       </button>
     </nav>
   </header>
-  <div class="consultationForm">
+  <div class="consultationForm" id="consultationForm">
     <h2>Consultation Form</h2>
-    <!-- Consultation Form -->
-    <form id="consultationForm">
+    <form>
       <input type="text" id="consultName" placeholder="Full Name" required>
       <input type="email" id="consultEmail" placeholder="Email" required>
       <input type="text" id="consultReason" placeholder="Reason For Consultation" required>
       <textarea id="consultMessage" placeholder="Why do you want to join?" required></textarea>
       <button class="btn" type="submit">Submit Consultation</button>
     </form>
-    <a href="consultation.html"><button class="btn" > Back </button></a>
   </div>
 
-    <script>
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById("name").value = params.get("name") || "";
-    document.getElementById("course").value = params.get("course") || "";
-    </script>
+    <a href="consultation.html"><button class="btn" > Back </button></a>
 
 
   <!-- FOOTER -->

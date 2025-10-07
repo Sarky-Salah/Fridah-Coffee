@@ -24,30 +24,34 @@
   // ✅Newsletter Subscription
   const subscribeForm = document.getElementById("subscribeForm");
   if (subscribeForm) {
-    subscribeForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = document.getElementById("subscriberEmail").value;
+  subscribeForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("subscriberEmail").value;
 
-      const subRef = ref(db, "subscribers");
-      const newSub = push(subRef);
+    const subRef = ref(db, "subscribers");
+    const newSubRef = push(subRef);
 
-      set(newSub, {
-        email: email,
-        timestamp: new Date().toISOString()
+    set(newSubRef, {
+      email,
+      timestamp: new Date().toISOString()
+    })
+      .then(() => {
+        alert("✅ Subscription successful!");
+        openGmail("subscription", { email }); // 👈 Moved here
+        subscribeForm.reset();
       })
-        .then(() => {
-          alert("✅ Subscription successful!");
-          subscribeForm.reset();
-        })
-        .catch((err) => {
-          console.error("❌ Error saving subscription:", err);
-          alert("Something went wrong. Check console.");
-        });
-    });
-  }
+      .catch((err) => {
+        console.error("❌ Error saving subscription:", err);
+        alert("Something went wrong. Check console.");
+      });
+  });
+}
+
+
 
   // ✅ Consultation Form
   const consultForm = document.getElementById("consultationForm");
+  if (consultForm) {
   consultForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -65,6 +69,11 @@
     set(newConsultRef, consultData)
       .then(() => {
         alert("✅ Consultation submitted successfully!");
+        openGmail("consultation", {
+          name: consultData.name,
+          email: consultData.email,
+          service: consultData.reason
+        });
         consultForm.reset();
       })
       .catch((err) => {
@@ -72,34 +81,38 @@
         alert("❌ Failed to submit consultation. Try again.");
       });
   });
+}
+
+
+
 
   // ✅ Training Application Form
-const applicationForm = document.getElementById('applicationForm');
+  const applicationForm = document.getElementById('applicationForm');
 
-if (applicationForm) {
-  applicationForm.addEventListener('submit', async (e) => {
+  if (applicationForm) {
+  applicationForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Collect data
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const course = document.getElementById('course').value;
     const message = document.getElementById('message').value;
 
     try {
-      // Save to Realtime Database
       const newAppRef = push(ref(db, "applications"));
       await set(newAppRef, {
-        name,
-        email,
-        course,
-        message,
+        name, email, course, message,
         timestamp: new Date().toISOString()
       });
 
       alert("✅ Application submitted successfully!");
+      openGmail("training", {
+        fullName: name,
+        email,
+        course,
+        reason: message
+      });
       applicationForm.reset();
-
     } catch (err) {
       console.error("Error saving application:", err);
       alert("❌ Something went wrong, try again.");
@@ -107,31 +120,80 @@ if (applicationForm) {
   });
 }
 
+
+
+
   // ✅ Contact Form
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const contactData = {
-        name: document.getElementById("contactName").value,
-        email: document.getElementById("contactEmail").value,
-        message: document.getElementById("contactMessage").value,
-        timestamp: new Date().toISOString()
-      };
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      const contactRef = ref(db, "contacts");
-      const newContact = push(contactRef);
+    const contactData = {
+      name: document.getElementById("contactName").value,
+      email: document.getElementById("contactEmail").value,
+      message: document.getElementById("contactMessage").value,
+      timestamp: new Date().toISOString()
+    };
 
-      set(newContact, contactData)
-        .then(() => {
-          alert("✅ Message sent!");
-          contactForm.reset();
-        })
-        .catch((err) => {
-          console.error("❌ Error saving contact:", err);
+    const contactRef = ref(db, "contacts");
+    const newContactRef = push(contactRef);
+
+    set(newContactRef, contactData)
+      .then(() => {
+        alert("✅ Message sent!");
+        openGmail("contact", {
+          name: contactData.name,
+          email: contactData.email,
+          message: contactData.message
         });
-    });
+        contactForm.reset();
+      })
+      .catch((err) => {
+        console.error("❌ Error saving contact:", err);
+      });
+  });
+}
+
+
+
+// Open Gmail with pre-filled details
+function openGmail(formType, formData) {
+  let subject = "";
+  let body = "";
+
+ if (formType === "contact") {
+  const recipients = "Fridahcoffee@gmail.com, sarkysalah@gmail.com"; // 👈 multiple recipients  
+    subject = "Contact Us Message";
+    body = `Hello, 
+    ${formData.name} 
+    Email: ${formData.email} 
+    Message: ${formData.message}`;
+  } 
+  else if (formType === "training") {
+  const recipients = "Fridahcoffee@gmail.com, sarkysalah@gmail.com"; // 👈 multiple recipients
+    subject = `Training Application - ${formData.fullName}`;
+    body = `Name: ${formData.fullName} 
+    Email: ${formData.email} 
+    Course: ${formData.course} 
+    Reason: ${formData.reason}`;
+  } 
+  else if (formType === "consultation") {
+  const recipients = "Fridahcoffee@gmail.com, sarkysalah@gmail.com"; // 👈 multiple recipients
+    subject = `Consultation Request from ${formData.name}`;
+    body = `Name: ${formData.name} 
+    Email: ${formData.email} 
+    Service Interested In: ${formData.service}`;
+  } 
+  else {
+    subject = "General Inquiry";
+    body = "Hello, I have a question.";
   }
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@yourcompany.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.open(gmailUrl, "_blank");
+}
+
 
 // ✅ Navbar Hamburger Toggle
 const hamburger = document.getElementById('hamburger');
