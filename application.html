@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fridah Coffee | From Farm to Cup</title>
+  <title>Training Form | Fridah Coffee</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -44,52 +44,34 @@
       </button>
     </nav>
   </header>
+  <div class="application-form" id="applicationForm">
+    <h2>Application Form</h2>
+    <!-- Training Application Form -->
+    <form id="applicationForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <select id="course" required>
+      <option value="">-- Select a Course --</option>
+      <option value="Basic Barista Course (Foundation Level)">Basic Barista Course</option>
+      <option value="Intermediate Barista Course">Intermediate Barista Course</option>
+      <option value="Professional Barista Course">Professional Barista Course</option>
+      <option value="Latte Art Masterclass">Latte Art Masterclass</option>
+      <option value="Home Brewing Techniques">Home Brewing Techniques</option>
+      <option value="Coffee Cupping & Sensory Skills">Coffee Cupping</option>
+      <option value="Introduction to Coffee Roasting">Coffee Roasting</option>
+    </select>
+    <textarea id="message" placeholder="Why do you want to join?" required></textarea>
+    <button class="btn" type="submit">Submit Application</button>
+  </form>
+    <a href="training.html"><button class="btn" > Back </button></a>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 id="hero-title" class="hero-title">From Farm to Cup – Discover the Art of Coffee with Fridah Coffee</h1>
-      <p class="hero-story">
-        I am Fridah, and coffee is more than a drink — it’s my journey. From the fertile soils of Uganda’s Mount Elgon to your cup, I have dedicated my life to sharing the rich flavors and stories behind every bean.
-      </p>
-      <div class="hero-buttons">
-        <a href="products.html" class="btn">Shop Now</a>
-        <a href="training.html" class="btn btn-ghost">Learn to Brew</a>
-      </div>
-    </div>
-  </section>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("name").value = params.get("name") || "";
+    document.getElementById("course").value = params.get("course") || "";
+    </script>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <div class="service-card">
-      <div class="icon">☕</div>
-      <h3>Coffee Products</h3>
-      <p>Freshly roasted beans, ground coffee, and more.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🎓</div>
-      <h3>Coffee Training</h3>
-      <p>Workshops and barista training for all levels.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🏪</div>
-      <h3>Coffee Shop Setup</h3>
-      <p>Consulting for new and growing coffee shops.</p>
-    </div>
-    <div class="service-card">
-      <div class="icon">🚚</div>
-      <h3>Monthly Subscription</h3>
-      <p>Get fresh coffee delivered monthly to your doorstep.</p>
-    </div>
-  </section>  
-
-  <!-- CONSULTING -->
-  <section id="consulting" class="split-section">
-    <div class="split">
-
-      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Coffee Shop">
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer>

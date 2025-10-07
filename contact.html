@@ -37,10 +37,11 @@
     <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
-    <form class="contact-form" action="mailto:fridah.saleh@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" rows="4" placeholder="Message" required></textarea>
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <input type="text" id="contactName" placeholder="Name" required>
+      <input type="email" id="contactEmail" placeholder="Email" required>
+      <textarea id="contactMessage" rows="4" placeholder="Message" required></textarea>
       <button type="submit" class="btn">Submit</button>
     </form>
 
@@ -57,8 +58,9 @@
   <section class="newsletter">
     <h3>Join our Coffee Lovers’ Club</h3>
     <p>Get tips, recipes, and offers.</p>
-    <form>
-      <input type="email" placeholder="Your email" required>
+    <!-- Newsletter Subscription -->
+    <form id="subscribeForm">
+      <input type="email" id="subscriberEmail" placeholder="Your Email" required>
       <button type="submit" class="btn">Subscribe</button>
     </form>
   </section>
@@ -70,19 +72,19 @@
   </section>
 
     <div class="contact-info">
-      <p><strong>Email:</strong> info@fridahcoffee.com</p>
+      <p><strong>Email:</strong> Fridahcoffee@gmail.com</p>
       <p><strong>Phone:</strong> +256 773 562646</p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/256773562646">Chat Now</a></p>
+      <p><strong>WhatsApp:</strong> <a class="button" href="https://wa.me/256773562646">💬Chat Now</a></p>
       <p><strong>Location:</strong> Jinja, Uganda</p>    
     </div>
   </section>
 
-<!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     &copy; <span id="year"></span> Fridah Coffee. All rights reserved.
     <p style="margin-top:6px;font-size:0.9rem;color:#f5e9dd">Developed by The-One Developers.</p>
-    <a href="https://your-portfolio-link.com" target="_blank" style="color:#f5e9dd;text-decoration:none;">https://theonedevs.netlify.app/</a>
+    <b><a href="https://your-portfolio-link.com" target="_blank" style="color:#f5e9dd;text-decoration:none;">https://theonedevs.netlify.app/</a></b>
   </footer>
-  <script src="script.js"></script>
+  <script type="module" src="script.js" defer></script>
 </body>
 </html>
